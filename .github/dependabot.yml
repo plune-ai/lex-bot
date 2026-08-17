@@ -16,6 +16,13 @@ updates:
         update-types:
           - version-update:semver-minor
           - version-update:semver-patch
+      # @types/node's major tracks a Node release line, so it is pinned by `engines`, not by what
+      # npm calls latest. Taking a major above the lowest supported runtime lets `tsc` accept an API
+      # that does not exist there — the type error #171 hit was the symptom, not the reason to say no.
+      # Raise `engines` first, then drop this entry.
+      - dependency-name: "@types/node"
+        update-types:
+          - version-update:semver-major
 
   # CI / publish workflows (.github/workflows/*.yml).
   - package-ecosystem: github-actions
