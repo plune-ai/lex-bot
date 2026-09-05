@@ -1,10 +1,10 @@
 # Architecture Decision Records — index
 
-**20 records.** All of them live here, in `docs/adr/`, one file per decision, numbered in the order they
+**21 records.** All of them live here, in `docs/adr/`, one file per decision, numbered in the order they
 were made. There is no second location.
 
-> Verified by command: `ls docs/adr/[0-9]*.md | wc -l` → `20`. If that number and this page disagree,
-> the command is right. *Checked 2026-08-02.*
+> Verified by command: `ls docs/adr/[0-9]*.md | wc -l` → `21`. If that number and this page disagree,
+> the command is right. *Checked 2026-09-02.*
 
 An ADR states what was decided, when, why, and what was rejected. It is not a design doc and not a changelog:
 if a change did not close off an option, it does not get one. The second half of this page is the reverse
@@ -41,6 +41,7 @@ number and gains a `Revised:` date in its header (see ADR-0002, ADR-0006).
 | [0018](0018-documentarian-page-understanding-cache.md) | Page understanding is an artifact, cached by ARIA fingerprint | 2026-06-29 | Accepted |
 | [0019](0019-adversarial-styles-port-taxonomy-not-mechanism.md) | Adversarial styles — port the taxonomy, not the mechanism | 2026-07-01 | Accepted |
 | [0020](0020-untrusted-llm-verdicts-and-data-protection.md) | An LLM verdict is untrusted; only self-created data is disposable | 2026-06-23 | Accepted |
+| [0021](0021-human-authored-case-as-input-boundary-unchanged.md) | A human-authored case is a first-class input; platform boundary (ADR-0010) unchanged; steps compile to cached deterministic actions | 2026-09-02 | Accepted |
 
 Note the dates: 0014 is numbered after 0015–0020 but was decided later. Numbers are assigned when an ADR is
 **written**; the `Date` field is when the decision was **made**. Records 0015–0020 were written on 2026-08-02
@@ -62,7 +63,7 @@ Records stopped at **0013 (2026-06-19)** while releases did not: `v0.4.0 → v0.
 `feat:`**. That gap is what the list below closes. Each entry is a verdict, not a description.
 
 > Verified by command: `git rev-list v0.4.0..HEAD --count` → `45`;
-> `git log v0.4.0..HEAD --pretty=%s | grep -c '^feat'` → `28`. *Checked 2026-08-02.*
+> `git log v0.4.0..HEAD --pretty=%s | grep -c '^feat'` → `28`. *Checked 2026-09-02.*
 
 ### Needed one — now written
 
